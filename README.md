@@ -18,6 +18,11 @@ docker exec -it jenkins-awscli bash
 cat /var/jenkins_home/secrets/initialAdminPassword
 ```
 
+## jakins 컨테이너 root로 접근하기
+```
+docker exec --user root -it jenkins bash
+```
+
 ## 시스템 상태 조회
 http://[SERVER_ID]:8080/systemInfo
 
