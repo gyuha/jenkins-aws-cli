@@ -1,0 +1,22 @@
+version: '3.7'
+
+services:
+  jenkins-awscli:
+    container_name: 'jenkins-awscli'
+    image: app:latest
+    build:
+      context: './jenkins'
+      dockerfile: 'Dockerfile'
+    restart: always                          
+    ports:                                   
+      - '8080:8080'                          
+    expose:                                  
+      - '8080'                               
+    volumes:                                 
+      - './jenkins_home:/var/jenkins_home'   
+    environment:
+      TZ: "Asia/Seoul"
+networks:                     
+  default:                    
+      external:                 
+            name: jenkins           
